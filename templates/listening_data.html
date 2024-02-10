@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Term Listening Data</title>
+  </head>
+  <body>
+    <h1>Term Listening Data</h1>
+    <p>
+      Welcome to the term listening data page! Here, you can explore your
+      listening data for a specific time period.
+    </p>
+    <ul>
+      <li><a href="/short_term_listening_data">4 weeks</a></li>
+      <li><a href="/mid_term_listening_data">6 months</a></li>
+      <li><a href="/long_term_listening_data">1 year</a></li>
+    </ul>
+  </body>
+</html>
