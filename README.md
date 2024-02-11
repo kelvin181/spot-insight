@@ -14,19 +14,46 @@
 
 ## Install
 
+### Step 1: Set Up Environment
+Ensure you have Python installed on your machine.
+
+### Step 2: Clone the Repository
+```sh
+git clone https://github.com/your-username/your-repository.git
+cd your-repository
+```
+
+### Step 3: Install Dependencies
 ```sh
 pip install -r requirements.txt
 ```
 
-## Usage
+### Step 4: Set Up Spotify API Credentials
+Create a Spotify Developer account and register a new application to obtain your `CLIENT_ID`, `CLIENT_SECRET`, and set `REDIRECT_URI` in your [Spotify Developer Dashboard](https://developer.spotify.com/dashboard/applications).
 
+Create a `.env` file in the project root directory and add your Spotify API credentials:
+
+```env
+CLIENT_ID=your_client_id
+CLIENT_SECRET=your_client_secret
+REDIRECT_URI=your_redirect_uri
+Replace your_client_id, your_client_secret, and your_redirect_uri with the corresponding values from your Spotify Developer Dashboard. Keep this information confidential and do not share it publicly.
+```
+
+### Step 5: Run the Application
 ```sh
 python main.py
 ```
 
+### Step 6: Access the Application
+Open your web browser and navigate to http://localhost:5000/ to access the SpotInsight application.
+
+### Note:
+The application uses Flask as a web framework, so make sure to have it installed using the pip install Flask command if you don't have it already.
+
 ## Author
 
-👤 **Kelvin Chen**
+**Kelvin Chen**
 
 * Github: [@kelvin181](https://github.com/kelvin181)
 * LinkedIn: [@Kelvin Chen](https://linkedin.com/in/kelvin-chen-7a5444279)
