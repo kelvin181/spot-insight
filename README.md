@@ -56,4 +56,4 @@ The application uses Flask as a web framework, so make sure to have it installed
 **Kelvin Chen**
 
 * Github: [@kelvin181](https://github.com/kelvin181)
-* LinkedIn: [@Kelvin Chen](https://linkedin.com/in/kelvin-chen-7a5444279)
+* LinkedIn: [@kelvin-chen8](https://linkedin.com/in/kelvin-chen-7a5444279)
