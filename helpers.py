@@ -5,8 +5,11 @@ from datetime import datetime, timedelta
 from flask import Flask, redirect, request, jsonify, session, url_for
 
 def verify_token(session):
-    if 'access_token' not in session or datetime.now().timestamp() > session.get('expires_at', 0):
+    if 'access_token' not in session:
         return redirect('/login')
+
+    if datetime.now().timestamp() > session.get('expires_at', 0):
+        return redirect('/refresh-token')
 
 def process_data(json_result):
     items = []
