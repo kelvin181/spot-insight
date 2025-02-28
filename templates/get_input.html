@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get Input</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+
+  <body>
+    <header>
+      <h1>Menu</h1>
+    </header>
+    <section class="container">
+      <h3>Choose an option below:</h3>
+      <div>
+        <a href="/display_playlists" class="link">Get Playlists</a>
+      </div>
+      <div>
+        <a href="/get_interval_listening_data" class="link"
+          >Get Listening Data</a
+        >
+      </div>
+      <div>
+        <a href="/get_interval_artist_data" class="link"
+          >Get Favourite Artist Data</a
+        >
+      </div>
+    </section>
+  </body>
+</html>

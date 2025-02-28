@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Time Interval</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+
+  <body>
+    <header>
+      <h1>Time Interval</h1>
+    </header>
+    <section class="container">
+      <h3>Choose an option below:</h3>
+      <div class="interval-button">
+        <a href="/short_term_artist_data" class="link">4 Weeks</a>
+      </div>
+      <div class="interval-button">
+        <a href="/mid_term_artist_data" class="link">6 Months</a>
+      </div>
+      <div class="interval-button">
+        <a href="/long_term_artist_data" class="link">All time</a>
+      </div>
+    </section>
+  </body>
+</html>

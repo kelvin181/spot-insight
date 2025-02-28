@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top Artists</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+
+  <body>
+    <header>
+      <h1>Your top artists</h1>
+    </header>
+    <section class="container">
+      {% if artists %}
+      <table>
+        <tr>
+          {% for artist in artists %}
+          <td>
+            <a href="{{ artist.link }}" class="artist">
+              <img src="{{ artist.image_url }}" alt="{{ artist.name }}" />
+              <p class="artist-name">{{ loop.index }}. {{ artist.name }}</p>
+            </a>
+          </td>
+          {% if loop.index % 5 == 0 %}
+        </tr>
+        <tr>
+          {% endif %} {% endfor %}
+        </tr>
+      </table>
+      {% else %}
+      <p>No artists available.</p>
+      {% endif %}
+    </section>
+  </body>
+</html>

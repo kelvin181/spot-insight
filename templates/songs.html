@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top Songs</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+  </head>
+
+  <body>
+    <header>
+      <h1>Your top songs</h1>
+    </header>
+    <section class="container">
+      {% if songs %}
+      <table>
+        <tr>
+          {% for song in songs %}
+          <td>
+            <a href="{{ song.link }}" class="song">
+              <img src="{{ song.image_url }}" alt="{{ song.name }}" />
+              <p class="song-name">{{ loop.index }}. {{ song.name }}</p>
+            </a>
+          </td>
+          {% if loop.index % 5 == 0 %}
+        </tr>
+        <tr>
+          {% endif %} {% endfor %}
+        </tr>
+      </table>
+      {% else %}
+      <p>No songs available.</p>
+      {% endif %}
+    </section>
+  </body>
+</html>
