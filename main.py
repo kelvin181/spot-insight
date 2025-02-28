@@ -3,7 +3,7 @@ import os
 import urllib.parse
 from datetime import datetime
 
-from flask import Flask, redirect, request, jsonify, session, render_template
+from flask import Flask, redirect, request, session, render_template
 import requests
 from dotenv import load_dotenv
 from helpers import *
@@ -22,7 +22,7 @@ API_BASE_URL = "https://api.spotify.com/v1/"
 
 @app.before_request
 def verify_token():
-    if request.endpoint in ["login", "callback", "refresh_token", "home"]:
+    if request.endpoint in ["login", "callback", "refresh_token", "home", "static"]:
         return
 
     if "access_token" not in session:
@@ -39,6 +39,9 @@ def home():
 
 @app.route("/login")
 def login():
+    if "access_token" in session:
+        return redirect("/get_input")
+
     scope = "user-read-private user-read-email playlist-read-collaborative playlist-modify-private playlist-modify-public user-top-read user-read-recently-played playlist-read-private"
 
     params = {
@@ -57,7 +60,7 @@ def login():
 @app.route("/callback")
 def callback():
     if "error" in request.args:
-        return jsonify({"error": request.args["error"]})
+        return redirect("/")
 
     if "code" in request.args:
         request_body = {
