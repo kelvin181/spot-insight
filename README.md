@@ -39,8 +39,8 @@ Create a `.env` file in the project root directory and add your Spotify API cred
 CLIENT_ID=your_client_id
 CLIENT_SECRET=your_client_secret
 REDIRECT_URI="http://localhost:5000/callback"
-Replace your_client_id and your_client_secret with the corresponding values from your Spotify Developer Dashboard. Keep this information confidential and do not share it publicly.
 ```
+Replace your_client_id and your_client_secret with the corresponding values from your Spotify Developer Dashboard. Keep this information confidential, and do not share it publicly.
 
 ### Step 5: Run the Application
 ```sh
